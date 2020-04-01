@@ -1,13 +1,13 @@
 package com.github.dmitryalexeevi4.cucumber.stepdefs.sberbank;
 
-import com.github.dmitryalexeevi4.pages.sberbank.Page;
+import com.github.dmitryalexeevi4.pages.sberbank.PersonPage;
 import io.cucumber.java.ru.*;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
 
 public class PersonPageSteps {
-    Page personPage = new Page();
+    PersonPage personPage = new PersonPage();
 
     @И("закрывает куки")
     public void closeCookie() {
@@ -15,7 +15,7 @@ public class PersonPageSteps {
     }
 
     @Затем("пользователь открывает страницу {string}")
-    public void openSection(String pageName) {
+    public void openPage(String pageName) {
         personPage.moveTo("Вклады").openSection("Вклады");
         $("title").waitUntil(attribute("text", "«Сбербанк» - " + pageName), 5000);
     }
