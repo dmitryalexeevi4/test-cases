@@ -1,13 +1,11 @@
 package com.github.dmitryalexeevi4.pages;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class CommonData {
     private static CommonData INSTANCE;
 
-    private final Map<String, Object> pageData;
+    private final Map<String, Integer> pageData;
 
     public static CommonData instance() {
         if (Objects.isNull(INSTANCE)) {
@@ -20,11 +18,11 @@ public class CommonData {
         pageData = new HashMap<>();
     }
 
-    public void saveData(String key, Object data) {
+    public void saveData(String key, int data) {
         pageData.put(key, data);
     }
 
-    public void getData(String key) {
-        pageData.get(key);
+    public int getData(String key) {
+        return pageData.get(key);
     }
 }

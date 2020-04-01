@@ -1,26 +1,33 @@
 package com.github.dmitryalexeevi4.cucumber.stepdefs.autoru;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
+import com.github.dmitryalexeevi4.pages.autoru.MainPage;
 import io.cucumber.java.ru.*;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.github.dmitryalexeevi4.pages.autoru.MainPage.getMainPage;
+import static com.codeborne.selenide.Condition.*;
+import static com.github.dmitryalexeevi4.cucumber.stepdefs.CommonSteps.commonData;
 
 
 public class MainPageSteps {
-    static int advCountFromMainPage = 0;
+    MainPage mainPage = new MainPage();
 
     @Затем("закрываем модальное окно")
     public void closeModal() {
-        $(".Modal_visible .Modal__closer").click();
+        SelenideElement modal = $(".Modal_visible .Modal__closer");
+        if (modal.is(visible)) {
+            modal.click();
+        }
     }
 
     @Затем("запоминаем количество автомобилей марки {word}")
     public void saveAdvCount(String carMark) {
-        advCountFromMainPage = getMainPage().getAdvCount(carMark);
+        commonData.saveData("advCountFromMainPage", mainPage.getAdvCount(carMark));
     }
 
     @Затем("пользователь переходит на страницу с объявлениями по марке {word}")
     public void enterCarsPage(String carMark) {
-        getMainPage().clickAdvButton(carMark);
+        mainPage.clickAdvButton(carMark);
     }
 }
