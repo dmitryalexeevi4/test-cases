@@ -4,11 +4,12 @@ import com.github.dmitryalexeevi4.pages.autoru.CarModelPage;
 import io.cucumber.java.ru.*;
 import org.testng.Assert;
 
+import static com.github.dmitryalexeevi4.pages.CommonData.*;
 import static com.github.dmitryalexeevi4.cucumber.stepdefs.CommonSteps.commonData;
 
 public class CarModelPageSteps {
     CarModelPage carModelPage = new CarModelPage();
-    int modelAdvCountFromCarPage = commonData.getData("modelAdvCountFromCarPage");
+    int modelAdvCountFromCarPage = commonData.getData(KEY_MODEL_COUNT_FROM_CAR_PAGE);
 
     @И("сверяем текущее количество машин с количеством машин на странице марки")
     public void countCheck() {
