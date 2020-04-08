@@ -17,6 +17,5 @@
 
     Примеры:
       | Марка      | Модель  |
-      | Subaru     | Impreza |
       | Ford       | Escape  |
       | Mitsubishi | Lancer  |

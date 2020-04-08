@@ -1,8 +1,6 @@
 package com.github.dmitryalexeevi4.cucumber.stepdefs.autoru;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.github.dmitryalexeevi4.pages.CommonData;
 import com.github.dmitryalexeevi4.pages.autoru.MainPage;
 import io.cucumber.java.ru.*;
 

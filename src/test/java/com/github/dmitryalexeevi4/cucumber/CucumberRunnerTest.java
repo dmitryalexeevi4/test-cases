@@ -14,6 +14,7 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
         glue = {"com.github.dmitryalexeevi4.cucumber.stepdefs"},
         tags = "@all"
 )
+
 public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
     @BeforeClass
     public void init() {

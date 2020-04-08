@@ -5,12 +5,13 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$;
 
 public class OverviewPage extends Page {
+    private SelenideElement financialFreedom = $("#header-container #can-spend");
 
     public SelenideElement getFinancialFreedom() {
-        return $("#header-container #can-spend");
+        return financialFreedom;
     }
 
     public SelenideElement getMyAssets() {
-        return getFinancialFreedom().$(".my-assets");
+        return financialFreedom.$(".my-assets");
     }
 }

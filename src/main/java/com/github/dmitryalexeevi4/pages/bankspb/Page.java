@@ -6,8 +6,10 @@ import org.openqa.selenium.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class Page {
+    private SelenideElement userGreeting = $(By.id("user-greeting"));
+
     public SelenideElement getUserGreeting() {
-        return $(By.id("user-greeting"));
+        return userGreeting;
     }
 
     public Page openNavBarSection(String sectionName) {

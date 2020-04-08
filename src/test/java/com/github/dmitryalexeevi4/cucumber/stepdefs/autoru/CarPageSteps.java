@@ -1,6 +1,5 @@
 package com.github.dmitryalexeevi4.cucumber.stepdefs.autoru;
 
-import com.github.dmitryalexeevi4.pages.CommonData;
 import com.github.dmitryalexeevi4.pages.autoru.CarPage;
 import io.cucumber.java.ru.*;
 import org.testng.Assert;
